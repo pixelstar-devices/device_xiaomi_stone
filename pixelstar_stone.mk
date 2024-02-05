@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 The LineageOS Project
+# Copyright (C) 2024 The Pixelstar Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -8,8 +8,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Pixelstar stuff.
+$(call inherit-product, vendor/pixelstar/config/common_full_phone.mk)
+
+PIXELSTAR_BUILD_TYPE := official
 
 # Inherit from stone device
 $(call inherit-product, device/xiaomi/stone/device.mk)
@@ -20,6 +22,8 @@ TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_DISABLE_EPPE := true
 TARGET_DEBLOAT := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
 
 # Charging Animation
 TARGET_USE_PIXEL_CHARGER := true
@@ -28,7 +32,7 @@ TARGET_USE_PIXEL_CHARGER := true
 PREBUILT_KERNEL := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_stone
+PRODUCT_NAME := pixelstar_stone
 PRODUCT_DEVICE := stone
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Xiaomi
